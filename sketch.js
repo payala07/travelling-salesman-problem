@@ -27,7 +27,7 @@ function draw(){
     fill(150,0,200);
     for(var i = 0; i < shops.length; i ++){
         //draws circles at the positions generated at random
-        ellipse(shops[i].x, shops[i].y,8,8);
+        ellipse(shops[i].x, shops[i].y,20,20);
     }
     
     //Normal path
