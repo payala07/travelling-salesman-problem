@@ -19,11 +19,15 @@ function setup(){
 
 function draw(){
     background(0);
-    fill(150,0,200);
+    fill(0);
+    noStroke();
+    textSize(12);
+    text(`Best: ${floor(recordDistance)}`, 340, 10);
 
+    fill(150,0,200);
     for(var i = 0; i < shops.length; i ++){
         //draws circles at the positions generated at random
-        ellipse(shops[i].x, shops[i].y,10,10);
+        ellipse(shops[i].x, shops[i].y,8,8);
     }
     
     //Normal path
@@ -62,7 +66,7 @@ function draw(){
 function swap(a, i ,j ){
     var temp = a[i];
     a[i] = a[j];
-    a[j] = a[i];
+    a[j] = temp;
 }
 
 //Return total distance of the points in the order they are
@@ -72,5 +76,5 @@ function calcDistance(points){
         var distance =dist(points[i].x, points[i].y, points[i+1].x, points[i+1].y);
         sum += distance;
     }
-    return distance;
+    return sum;
 }
